@@ -6,4 +6,15 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::post('login', 'API\UserController@login');
+Route::post('register', 'API\UserController@register');
+
+Route::group(['middleware' => 'auth:api'], function(){
+  Route::post('details', 'API\UserController@details');
+});
+
 Route::get('/menus', 'MenuController@index');
+Route::get('/gems', 'GemController@index');
+Route::get('/students', 'StudentController@index');
+Route::get('/explanations', 'ExplanationController@index');
+Route::get('/levels', 'LevelController@index');
