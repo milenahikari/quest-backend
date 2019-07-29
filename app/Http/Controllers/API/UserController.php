@@ -51,6 +51,7 @@
             $user = User::create($input); 
             $success['token'] =  $user->createToken('MyApp')->accessToken; 
             $success['name'] =  $user->name;
+            $success['id'] =  $user->id;
 
             return response()->json(['success'=>$success], $this->successStatus); 
         }
@@ -64,5 +65,18 @@
         { 
             $user = Auth::user(); 
             return response()->json(['success' => $user], $this->successStatus); 
+        }
+        /** 
+         * update user 
+         * 
+         * @return \Illuminate\Http\Response 
+         */ 
+        public function update(Request $request)
+        {
+            $user = User::find($request->id);
+            $user->name = "Moises";
+            $user->city = $request->city;
+            $user->save();
+
         }
 }
