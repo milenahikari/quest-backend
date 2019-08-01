@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGemsTable extends Migration
+class CreateMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateGemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gems', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->string('icon');
-            $table->string('title');
-            $table->string('class');
+            $table->string('to');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateGemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gems');
+        Schema::dropIfExists('menus');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableMenus extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateTableMenus extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('icon');
-            $table->string('to');
+            $table->unsignedBigInteger('id_state');
+            $table->foreign('id_state')
+                ->references('id')
+                ->on('states');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateTableMenus extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('cities');
     }
 }
