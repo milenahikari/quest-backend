@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Model\City;
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -16,19 +15,10 @@ Route::group(['middleware' => 'auth:api'], function(){
 });
 
 Route::get('/menus', 'MenuController@index');
-Route::get('/gems', 'GemController@index');
-Route::get('/students', 'StudentController@index');
+// Route::get('/gems', 'GemController@index');
+// Route::get('/students', 'StudentController@index');
 Route::get('/explanations', 'ExplanationController@index');
-Route::get('/levels', 'LevelController@index');
+// Route::get('/levels', 'LevelController@index');
 
 //Rota para encontrar cidade do usuario 
-Route::get('/search_city/{name}', function($name){
-  if($name !== '') {
-    $cities = City::where('nome', 'LIKE', '%'.$name.'%')
-      ->get();
-
-      if(count($cities) > 0) {
-        return $cities;
-      }
-  }
-});
+Route::get('/search_city/{name}', 'CityController@searchCity');

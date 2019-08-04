@@ -18,10 +18,10 @@ class CreateExplanationsTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->string('position');
-            $table->string('parteI');
-            $table->string('parteII');
-            $table->string('parteIII');
-            $table->string('parteIV');
+            $table->string('textI');
+            $table->string('textII');
+            $table->string('textIII');
+            $table->string('textIV');
             $table->timestamps();
         });
     }

@@ -15,11 +15,17 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+
             $table->unsignedBigInteger('id_state');
             $table->foreign('id_state')
                 ->references('id')
                 ->on('states');
+
+            $table->string('name');
+            $table->char('zip_code', 8);
+            $table->char('ddd', 3)->nullable();
+            $table->double('latitude');
+            $table->double('longitude');
             $table->timestamps();
         });
     }

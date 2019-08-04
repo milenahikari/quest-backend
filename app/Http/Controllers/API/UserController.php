@@ -75,13 +75,18 @@
         public function update(Request $request)
         {
             try {
-                $user = User::find($request->id);
-                $user->id_city = $request->city;
-                $user->course = $request->course;
-                $user->teach = $request->teach;
+                $user = User::find($request->id_user);
+                $user->id_city    = $request->id_city;
+                $user->course     = $request->course;
+                $user->teach      = $request->teach;
+                $user->created_at = date('Y-m-d H:i:s');
+                $user->updated_at = null;
                 $user->save();
+
                 return response()->json(['success' => 'Sucesso ao cadastrar usuário'], $this->successStatus);
+
             } catch(Exception $e){
+
                 return response()->json(['error' => 'Erro ao cadastrar usuário'], $this->errorStatus); 
             }
 
