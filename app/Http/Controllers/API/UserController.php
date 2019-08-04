@@ -10,6 +10,7 @@
     class UserController extends Controller 
     {
         public $successStatus = 200;
+        public $errorStatus = 401;
 
         /** 
          * login api 
@@ -73,10 +74,16 @@
          */ 
         public function update(Request $request)
         {
-            $user = User::find($request->id);
-            $user->name = "Moises";
-            $user->city = $request->city;
-            $user->save();
+            try {
+                $user = User::find($request->id);
+                $user->id_city = $request->city;
+                $user->course = $request->course;
+                $user->teach = $request->teach;
+                $user->save();
+                return response()->json(['success' => 'Sucesso ao cadastrar usuário'], $this->successStatus);
+            } catch(Exception $e){
+                return response()->json(['error' => 'Erro ao cadastrar usuário'], $this->errorStatus); 
+            }
 
         }
 }
