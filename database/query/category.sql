@@ -1,0 +1,12 @@
+insert into categories (name, icon) values ('Artes', 'fas fa-palette');
+insert into categories (name, icon) values ('Biologia', 'fas fa-microscope');
+insert into categories (name, icon) values ('Filosofia', 'fas fa-puzzle-piece');
+insert into categories (name, icon) values ('Física', 'fas fa-atom');
+insert into categories (name, icon) values('Geografia', 'fas fa-globe-africa');
+insert into categories (name, icon) values('História', 'fas fa-archway');
+insert into categories (name, icon) values('Inglês', 'fas fa-language');
+insert into categories (name, icon) values('Literatura', 'fas fa-book-reader');
+insert into categories (name, icon) values('Matemática', 'fas fa-calculator');
+insert into categories (name, icon) values('Português', 'fas fa-book');
+insert into categories (name, icon) values('Química', 'fas fa-bong');
+insert into categories (name, icon) values('Sociologia', 'fas fa-running');

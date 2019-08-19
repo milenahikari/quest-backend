@@ -19,6 +19,10 @@ class CreateCoursesTable extends Migration
             $table->foreign('id_category')
                 ->references('id')
                 ->on('categories');
+            $table->unsignedBigInteger('id_monitor');
+            $table->foreign('id_monitor')
+                ->references('id')
+                ->on('monitors');
             $table->string('title');
             $table->string('description');
             $table->timestamps();

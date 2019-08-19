@@ -10,11 +10,13 @@ Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
-  Route::post('users/details', 'API\UserController@details');
-  Route::put('users/update', 'API\UserController@update');
+  Route::post('register/monitor', 'MonitorController@registerMonitor');
+  Route::post('course', 'CourseController@store');
+
 });
 
 Route::get('/menus', 'MenuController@index');
+Route::get('/category', 'CategoryController@index');
 // Route::get('/gems', 'GemController@index');
 // Route::get('/students', 'StudentController@index');
 Route::get('/explanations', 'ExplanationController@index');

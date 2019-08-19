@@ -21,10 +21,6 @@ class CreateMonitorsTable extends Migration
                 ->on('users');
             $table->string('phone');
             $table->boolean('share_phone');
-            $table->unsignedBigInteger('id_course');
-            $table->foreign('id_course')
-                ->references('id')
-                ->on('courses');
             $table->timestamps();
         });
     }

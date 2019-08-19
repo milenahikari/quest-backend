@@ -29,6 +29,7 @@
             } 
         }
 
+        
         /** 
          * Register api 
          * 
@@ -49,14 +50,18 @@
 
             $input = $request->all(); 
             $input['password'] = bcrypt($input['password']); 
+
+            //Salva dados no banco
             $user = User::create($input); 
+
+            //Retorno sucesso
             $success['token'] =  $user->createToken('MyApp')->accessToken; 
             $success['name'] =  $user->name;
             $success['id'] =  $user->id;
 
             return response()->json(['success'=>$success], $this->successStatus); 
         }
-
+        
         /** 
          * details api 
          * 
@@ -67,28 +72,5 @@
             $user = Auth::user(); 
             return response()->json(['success' => $user], $this->successStatus); 
         }
-        /** 
-         * update user 
-         * 
-         * @return \Illuminate\Http\Response 
-         */ 
-        public function update(Request $request)
-        {
-            try {
-                $user = User::find($request->id_user);
-                $user->id_city    = $request->id_city;
-                $user->course     = $request->course;
-                $user->teach      = $request->teach;
-                $user->created_at = date('Y-m-d H:i:s');
-                $user->updated_at = null;
-                $user->save();
-
-                return response()->json(['success' => 'Sucesso ao cadastrar usuário'], $this->successStatus);
-
-            } catch(Exception $e){
-
-                return response()->json(['error' => 'Erro ao cadastrar usuário'], $this->errorStatus); 
-            }
-
-        }
+        
 }
