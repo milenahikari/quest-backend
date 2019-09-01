@@ -17,10 +17,11 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 Route::get('/menus', 'MenuController@index');
 Route::get('/category', 'CategoryController@index');
-// Route::get('/gems', 'GemController@index');
-// Route::get('/students', 'StudentController@index');
 Route::get('/explanations', 'ExplanationController@index');
+Route::get('/search_city/{name}', 'CityController@searchCity');
+Route::get('/monitors', 'MonitorController@index');
+
+// Route::get('/gems', 'GemController@index');
 // Route::get('/levels', 'LevelController@index');
 
 //Rota para encontrar cidade do usuario 
-Route::get('/search_city/{name}', 'CityController@searchCity');
