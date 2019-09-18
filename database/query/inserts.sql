@@ -4,7 +4,7 @@ insert into menus (name, icon, `to`, created_at, updated_at) values ("Minhas mat
 insert into menus (name, icon, `to`, created_at, updated_at) values ("Medalhas", "fas fa-medal", "/medals", CURRENT_TIMESTAMP, null);
 insert into menus (name, icon, `to`, created_at, updated_at) values ("QR Code", "fas fa-qrcode", "/", CURRENT_TIMESTAMP, null);
 insert into menus (name, icon, `to`, created_at, updated_at) values ("Avaliar aula", "fas fa-star", "/", CURRENT_TIMESTAMP, null);
-insert into menus (name, icon, `to`, created_at, updated_at) values ("Sair", "fas fa-sign-out-alt", "/", CURRENT_TIMESTAMP, null);
+-- insert into menus (name, icon, `to`, created_at, updated_at) values ("Sair", "fas fa-sign-out-alt", "/", CURRENT_TIMESTAMP, null);
 
 /*EXPLANATIONS*/
 insert into explanations (title, image, position, textI, textII, textIII, textIV, created_at, updated_at) values ("APRENDA", "grupoestudo.png", "0px -15px", "Encontre a ajuda perfeita para entender a matéria", "Tire suas dúvidas com um amigo", "Combine o melhor momento para estudar", "", CURRENT_TIMESTAMP, null);

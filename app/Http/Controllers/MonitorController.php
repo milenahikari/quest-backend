@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Monitor; 
+use App\Model\Course; 
 use Validator;
 
 class MonitorController extends Controller
@@ -51,5 +52,13 @@ class MonitorController extends Controller
         if(count($monitors) > 0) {
             return $monitors;
         }
+    }
+
+    public function listCourses($idMonitor) {
+        $courses = Course::select('title')
+        ->where('id_monitor', '=', 2)
+        ->get();
+
+        return $courses;        
     }
 }

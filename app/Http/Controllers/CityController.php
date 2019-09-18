@@ -8,16 +8,22 @@ use App\Model\City;
 class CityController extends Controller
 {
 
-    public function searchCity($name) {
-        if($name !== '') {
-            $cities = City::select('cities.id as id_city', 'cities.name', 'states.federated_unit')
-            ->join('states', 'states.id', '=', 'cities.id_state')
-            ->where('cities.name', 'LIKE', '%'.$name.'%')
-            ->get();
+    public function searchCity(Request $request) {
 
-            if(count($cities) > 0) {
-                return $cities;
-            }
-        }
+        $cities = City::search($request->get('q'));
+        return $cities;
+        
+        
     }
+
+    // public function search(Request $request)
+    // {
+    //     $cities = City::search($request->get('q'),$request->get('cod_state'));
+    //     return response()->json(
+    //         [
+    //             "status"=>true,
+    //             "cities"=> $cities
+    //         ]
+    //     );
+    // }
 }

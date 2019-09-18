@@ -20,8 +20,17 @@
         public function login(){ 
             if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
                 $user = Auth::user(); 
+                
                 $success['token'] =  $user->createToken('MyApp')->accessToken; 
 
+                $success['profile'] = [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'course' => $user->course,
+                    'email' => $user->email,
+                    'id_city' => $user->id_city
+                ];
+                               
                 return response()->json(['success' => $success], $this->successStatus); 
             } 
             else{ 
@@ -56,9 +65,13 @@
 
             //Retorno sucesso
             $success['token'] =  $user->createToken('MyApp')->accessToken; 
-            $success['name'] =  $user->name;
-            $success['id'] =  $user->id;
-
+            $success['profile'] = [
+                'id' => $user->id,
+                'name' => $user->name,
+                'course' => $user->course,
+                'email' => $user->email,
+                'id_city' => $user->id_city
+            ];
             return response()->json(['success'=>$success], $this->successStatus); 
         }
         

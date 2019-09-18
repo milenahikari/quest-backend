@@ -12,13 +12,16 @@ Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
   Route::post('register/monitor', 'MonitorController@registerMonitor');
   Route::post('course', 'CourseController@store');
-
+  
+  
 });
 
 Route::get('/menus', 'MenuController@index');
+Route::get('monitor/{id}/courses', 'MonitorController@listCourses');
+
 Route::get('/category', 'CategoryController@index');
 Route::get('/explanations', 'ExplanationController@index');
-Route::get('/search_city/{name}', 'CityController@searchCity');
+Route::get('/search_city', 'CityController@searchCity');
 Route::get('/monitors', 'MonitorController@index');
 
 // Route::get('/gems', 'GemController@index');
