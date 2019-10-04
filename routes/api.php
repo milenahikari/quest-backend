@@ -24,6 +24,8 @@ Route::get('/monitors', 'MonitorController@index');
 
 Route::put('/user/{id}', 'UserController@update');
 
+Route::get('/search/course', 'CourseController@find');
+
 // Route::get('/gems', 'GemController@index');
 // Route::get('/levels', 'LevelController@index');
 
