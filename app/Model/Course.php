@@ -10,7 +10,14 @@ class Course extends Model
 
     public static function serch($idCity, $course)
     {
-        $course = Course::select('monitors.id', 'users.name as name_monitor', 'users.course as course', 'cities.name as city', 'states.federated_unit as state')
+        $course = Course::select(
+            'monitors.id',
+            'users.name as name_monitor',
+            'users.course as course',
+            'users.email as email',
+            'cities.name as city',
+            'states.federated_unit as state'
+        )
             ->join('monitors', 'monitors.id', '=', 'courses.id_monitor')
             ->join('users', 'users.id', '=', 'monitors.id_user')
             ->join('cities', 'cities.id', '=', 'users.id_city')

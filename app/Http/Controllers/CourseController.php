@@ -35,4 +35,57 @@ class CourseController extends Controller
     {
         return Course::serch($request->get('idCity'), $request->get('course'));
     }
+
+    public function getCourses($idMonitor)
+    {
+        if (!is_numeric($idMonitor) || $idMonitor < 0) return;
+
+        $dados = Course::select(
+            'categories.id',
+            'categories.name',
+            'categories.icon',
+            'courses.id as id_course',
+            'courses.title',
+            'courses.description'
+        )
+            ->join('categories', 'courses.id_category', '=', 'categories.id')
+            ->where('courses.id_monitor', $idMonitor)
+            ->orderBy('categories.id')
+            ->get();
+
+        if (count($dados) > 0) {
+            $category = [];
+            $idCategory = 0;
+            $index = 0;
+
+            foreach ($dados as $key => $value) {
+                if ($idCategory == $value['id']) {
+                    $category[$index]['category']['courses'][] = [
+                        'id'          => $value['id_course'],
+                        'title'       => $value['title'],
+                        'description' => $value['description']
+                    ];
+                } else {
+                    $category[] = [
+                        'category' => [
+                            'id'      => $value['id'],
+                            'name'    => $value['name'],
+                            'icon'    => $value['icon'],
+                            'courses' => [[
+                                'id'          => $value['id_course'],
+                                'title'       => $value['title'],
+                                'description' => $value['description']
+                            ]]
+                        ]
+                    ];
+                }
+
+                $idCategory = $value['id'];
+                $index = $key;
+            }
+
+
+            return $category;
+        }
+    }
 }
