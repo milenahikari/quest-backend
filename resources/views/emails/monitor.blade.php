@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -28,42 +28,35 @@
     }
 
     .wrapper-logo {
-      width: 100%;
       height: 150px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .wrapper-logo a {
       width: 100%;
-      height: 40%;
-      display: flex;
-      justify-content: center;
+      height: 100%;
     }
 
     .logo {
-      width: 30%;
+      height: 50px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10%;
     }
 
     .wrapper-title {
       background: #B41286;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 150px;
+      height: 100px;
     }
 
     .wrapper-title h1 {
       color: white;
+      padding: 30px;
     }
 
     .wrapper-title-monitor {
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin-top: 30px;
     }
 
@@ -104,15 +97,20 @@
     </div>
 
     <div class="container-body">
-      <p>A aluna <strong>{{ $userName }}</strong> precisa da sua ajuda e você é o único que pode ajudar com a matéria!</p>
-      <p>Mensagem de Mocinga:</p>
+
+      <p><strong>{{ $userName }}</strong> precisa da sua ajuda e você é o único que pode ajudar com a matéria!</p>
+
+      <p>Mensagem de {{ $userName }}:</p>
 
       <p><i>{{ $mensagem }}</i></p>
 
+      <p>Entre em contato através do e-email: {{$userEmail}}</p>
+
       <p>E ai, topa?</p>
+
       <p class="quest-rodape">Abraços, <br> Equipe QUEST</p>
 
-      <img class="img-rodape" src="https://i.ibb.co/gTNBbhQ/undraw-team-chat-y27k.png">
+      <center><img class="img-rodape" src="https://i.ibb.co/gTNBbhQ/undraw-team-chat-y27k.png"></center>
     </div>
 
   </div>

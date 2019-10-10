@@ -43,6 +43,7 @@ class SendMailMonitor extends Mailable
             ->view('emails.monitor')
             ->with([
                 'userName' => $this->userName,
+                'userEmail' => $this->userEmail,
                 'monitorName' => $this->monitorName,
                 'mensagem' => $this->mensagem,
             ]);

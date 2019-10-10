@@ -8,12 +8,11 @@ use App\Model\City;
 class CityController extends Controller
 {
 
-    public function searchCity(Request $request) {
+    public function searchCity(Request $request)
+    {
 
         $cities = City::search($request->get('q'));
         return $cities;
-        
-        
     }
 
     // public function search(Request $request)
