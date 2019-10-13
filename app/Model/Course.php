@@ -17,7 +17,7 @@ class Course extends Model
             'users.email as email',
             'cities.name as city',
             'states.federated_unit as state'
-        )
+        )->distinct()
             ->join('monitors', 'monitors.id', '=', 'courses.id_monitor')
             ->join('users', 'users.id', '=', 'monitors.id_user')
             ->join('cities', 'cities.id', '=', 'users.id_city')

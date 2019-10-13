@@ -82,4 +82,9 @@ class MonitorController extends Controller
             return response()->json(['monitor' => $monitor]);
         }
     }
+
+    public function getMonitorsByCategory($idCategory)
+    {
+        return Monitor::find($idCategory);
+    }
 }

@@ -14,6 +14,8 @@ Route::group(['middleware' => 'auth:api'], function () {
   Route::post('course', 'CourseController@store');
 });
 
+Route::get('monitors/category/{idCategory}', 'MonitorController@getMonitorsByCategory');
+
 Route::get('/menus', 'MenuController@index');
 
 Route::get('/monitors', 'MonitorController@getMonitors');

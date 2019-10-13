@@ -38,7 +38,7 @@ class SendMailMonitor extends Mailable
      */
     public function build()
     {
-        return $this->from($this->userEmail)
+        $retorno = $this->from($this->userEmail)
             ->subject('QUEST - solicitação de apoio nas suas disciplinas')
             ->view('emails.monitor')
             ->with([

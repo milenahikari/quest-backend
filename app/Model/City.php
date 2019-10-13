@@ -8,7 +8,8 @@ class City extends Model
 {
     public $table = "cities";
 
-    public static function search($name) {
+    public static function search($name)
+    {
 
         $cities = City::select('cities.id as id_city', 'cities.name', 'states.federated_unit')
             ->join('states', 'states.id', '=', 'cities.id_state')
@@ -20,5 +21,4 @@ class City extends Model
 
         return $cities;
     }
-
 }
