@@ -11,7 +11,7 @@ class MenuTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('menus')->insert([
             'name' => Str::random(10),
             'icon' => Str::random(10),
             'to'   => Str::random(10)
