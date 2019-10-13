@@ -32,6 +32,8 @@ Route::put('/user/{id}', 'UserController@update');
 
 Route::get('/search/course', 'CourseController@find');
 
+Route::post('/ratings/monitor', 'RatingsController@evaluation');
+
 // Route::get('/gems', 'GemController@index');
 // Route::get('/levels', 'LevelController@index');
 
