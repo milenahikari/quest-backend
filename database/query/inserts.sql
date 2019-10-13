@@ -1,9 +1,9 @@
 /*MENU*/
-insert into menus (name, icon, `to`, created_at, updated_at) values ('Meu perfil', 'fas fa-user-edit', '/profile', CURRENT_TIMESTAMP, null);
-insert into menus (name, icon, `to`, created_at, updated_at) values ("Minhas matérias", "fas fa-chalkboard-teacher", "/my-courses", CURRENT_TIMESTAMP, null);
-insert into menus (name, icon, `to`, created_at, updated_at) values ("Medalhas", "fas fa-medal", "/medals", CURRENT_TIMESTAMP, null);
-insert into menus (name, icon, `to`, created_at, updated_at) values ("QR Code", "fas fa-qrcode", "/", CURRENT_TIMESTAMP, null);
-insert into menus (name, icon, `to`, created_at, updated_at) values ("Avaliar aula", "fas fa-star", "/", CURRENT_TIMESTAMP, null);
+insert into menus (name, icon, `to`, created_at, updated_at) values ('Meu perfil', 'fas fa-user-edit', 'profile', CURRENT_TIMESTAMP, null);
+insert into menus (name, icon, `to`, created_at, updated_at) values ("Minhas matérias", "fas fa-chalkboard-teacher", "my-courses", CURRENT_TIMESTAMP, null);
+insert into menus (name, icon, `to`, created_at, updated_at) values ("Medalhas", "fas fa-medal", "medals", CURRENT_TIMESTAMP, null);
+--insert into menus (name, icon, `to`, created_at, updated_at) values ("QR Code", "fas fa-qrcode", "/", CURRENT_TIMESTAMP, null);
+insert into menus (name, icon, `to`, created_at, updated_at) values ("Avaliar aula", "fas fa-star", "evaluation", CURRENT_TIMESTAMP, null);
 -- insert into menus (name, icon, `to`, created_at, updated_at) values ("Sair", "fas fa-sign-out-alt", "/", CURRENT_TIMESTAMP, null);
 
 /*EXPLANATIONS*/

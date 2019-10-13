@@ -1,46 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.6.6deb5
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: 03-Ago-2019 às 21:37
--- Versão do servidor: 5.7.26-0ubuntu0.18.04.1
--- PHP Version: 7.2.19-0ubuntu0.18.04.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `uaufi_hotspot`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cidades`
---
-
--- CREATE TABLE `cidades` (
---   `cod_cidades` int(11) NOT NULL,
---   `estados_cod_estados` int(11) NOT NULL,
---   `nome` varchar(72) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
---   `cep` char(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
---   `ddd` tinyint(3) DEFAULT NULL,
---   `lat` double DEFAULT NULL,
---   `lng` double DEFAULT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `cidades`
---
-
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (0, 0, 'VAZIA', '00000000', NULL, 0, 0),
 (1, 1, 'ACRELÂNDIA', '69945000', 68, -10.0764608, -67.0586512),
 (2, 1, 'ASSIS BRASIL', '69935000', 68, -10.9319104, -69.5588954),
@@ -1142,7 +1100,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (1100, 5, 'UTINGA', '46810000', 75, 0, 0),
 (1101, 5, 'VALE VERDE', '45817000', NULL, 0, 0),
 (1102, 5, 'VALENÇA', '45400000', 75, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (1103, 5, 'VALENTE', '48890000', 75, 0, 0),
 (1104, 5, 'VÁRZEA DA ROÇA', '44635000', 74, 0, 0),
 (1105, 5, 'VÁRZEA DO CALDAS', '46910000', NULL, 0, 0),
@@ -2216,7 +2174,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (2175, 10, 'GOIANIRA', '75370000', 62, 0, 0),
 (2176, 10, 'GOIÁS', '76600000', 62, 0, 0),
 (2177, 10, 'GOIATUBA', '75600000', 64, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (2178, 10, 'GOUVELÂNDIA', '75865000', 64, 0, 0),
 (2179, 10, 'GUAPÓ', '75350000', 62, 0, 0),
 (2180, 10, 'GUARAÍTA', '76690000', 62, 0, 0),
@@ -3242,7 +3200,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (3203, 14, 'IBIAÍ', '39350000', 38, 0, 0),
 (3204, 14, 'IBIRACATU', '39455000', 38, 0, 0),
 (3205, 14, 'IBIRACI', '37990000', 35, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (3206, 14, 'IBIRITÉ', '32400000', 31, 0, 0),
 (3207, 14, 'IBITIRA', '35607000', NULL, 0, 0),
 (3208, 14, 'IBITIÚRA DE MINAS', '37790000', 35, 0, 0),
@@ -4253,7 +4211,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (4214, 13, 'NOVO HORIZONTE DO SUL', '79745000', 67, 0, 0),
 (4215, 13, 'ORIENTE', '79576000', NULL, 0, 0),
 (4216, 13, 'PAIAGUÁS', '79359000', NULL, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (4217, 13, 'PALMEIRAS', '79217000', NULL, 0, 0),
 (4218, 13, 'PANAMBI', '79876000', NULL, 0, 0),
 (4219, 13, 'PARAÍSO', '79552000', NULL, 0, 0),
@@ -5293,7 +5251,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (5256, 18, 'FREI MIGUELINHO', '55780000', 81, 0, 0),
 (5257, 18, 'FREXEIRAS', '55505000', NULL, 0, 0),
 (5258, 18, 'GAMELEIRA', '55530000', 81, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (5259, 18, 'GARANHUNS', '00000000', 87, 0, 0),
 (5260, 18, 'GLÓRIA DO GOITÁ', '55620000', 81, 0, 0),
 (5261, 18, 'GOIANA', '55900000', 81, 0, 0),
@@ -6323,7 +6281,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (6298, 17, 'MARGARIDA', '85974000', NULL, 0, 0),
 (6299, 17, 'MARIA HELENA', '87480000', 44, 0, 0),
 (6300, 17, 'MARIA LUIZA', '83251750', NULL, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (6301, 17, 'MARIALVA', '86990000', 44, 0, 0),
 (6302, 17, 'MARIENTAL', '83760000', 44, 0, 0),
 (6303, 17, 'MARILÂNDIA DO SUL', '86825000', 43, 0, 0),
@@ -7335,7 +7293,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (7316, 23, 'BURITIS', '78967800', NULL, 0, 0),
 (7317, 23, 'CABIXI', '78999000', NULL, 0, 0),
 (7318, 23, 'CACAULÂNDIA', '78944000', NULL, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (7319, 23, 'CACOAL', '00000000', NULL, 0, 0),
 (7320, 23, 'CALAMA', '78925000', NULL, 0, 0),
 (7321, 23, 'CAMPO NOVO DE RONDÔNIA', '78967000', NULL, 0, 0),
@@ -8343,7 +8301,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (8323, 25, 'ÁGUA DOCE', '89654000', NULL, 0, 0),
 (8324, 25, 'ÁGUAS BRANCAS', '88655000', NULL, 0, 0),
 (8325, 25, 'ÁGUAS CLARAS', '89320000', NULL, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (8326, 25, 'ÁGUAS DE CHAPECÓ', '89883000', NULL, 0, 0),
 (8327, 25, 'ÁGUAS FRIAS', '89843000', NULL, 0, 0),
 (8328, 25, 'ÁGUAS MORNAS', '88150000', NULL, 0, 0),
@@ -9367,7 +9325,7 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (9349, 26, 'MARINÓPOLIS', '15730000', NULL, 0, 0),
 (9350, 26, 'MARISTELA', '18510000', NULL, 0, 0),
 (9351, 26, 'MARTIM FRANCISCO', '00000000', NULL, 0, 0);
-INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `longitude`) VALUES
+INSERT INTO cities (id, id_state, name, zip_code, ddd, latitude, longitude) VALUES
 (9352, 26, 'MARTINHO PRADO JÚNIOR', '13855000', NULL, 0, 0),
 (9353, 26, 'MARTINÓPOLIS', '19500000', NULL, 0, 0),
 (9354, 26, 'MATÃO', '00000000', NULL, 0, 0),
@@ -10073,39 +10031,3 @@ INSERT INTO `cities` (`id`, `id_state`, `name`, `zip_code`, `ddd`, `latitude`, `
 (11020, 12, 'IPIRANGA DO NORTE', '78578000', NULL, 0, 0),
 (11021, 12, 'ITANHANGÁ', '78579000', NULL, 0, 0),
 (11059, 1, 'CAMPINAS', '69929000', NULL, 0, 0);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cidades`
---
--- ALTER TABLE `cities`
---   ADD PRIMARY KEY (`id`),
---   ADD KEY `fk_estados_cod_estados_idx` (`id_state`),
---   ADD KEY `nome_idx` (`name`) USING BTREE;
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cidades`
---
--- ALTER TABLE `cities`
---   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11060;
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `cidades`
---
--- ALTER TABLE `cities`
---   ADD CONSTRAINT `fk_cidades_cidades` FOREIGN KEY (`id_state`) REFERENCES `states` (`id`),
---   ADD CONSTRAINT `fk_estados_cod_estados` FOREIGN KEY (`id_state`) REFERENCES `states` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
