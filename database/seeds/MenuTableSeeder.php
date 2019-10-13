@@ -11,10 +11,27 @@ class MenuTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('menus')->insert([
-            'name' => Str::random(10),
-            'icon' => Str::random(10),
-            'to'   => Str::random(10)
-        ]);
+        DB::table('menus')->insert(
+            [
+                'name' => 'Meu perfil',
+                'icon' => 'fas fa-user-edit',
+                'to'   => 'profile'
+            ],
+            [
+                'name' => 'Minhas matérias',
+                'icon' => 'fas fa-chalkboard-teacher',
+                'to'   => 'my-courses'
+            ],
+            [
+                'name' => 'Medalhas',
+                'icon' => 'fas fa-medal',
+                'to'   => 'medals'
+            ],
+            [
+                'name' => 'Avaliar Aula',
+                'icon' => 'fas fa-star',
+                'to'   => 'evaluation'
+            ]
+        );
     }
 }
