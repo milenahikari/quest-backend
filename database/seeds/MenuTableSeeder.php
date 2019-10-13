@@ -11,7 +11,7 @@ class MenuTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('menus')->insert(
+        DB::table('menus')->insert([
             [
                 'name' => 'Meu perfil',
                 'icon' => 'fas fa-user-edit',
@@ -32,6 +32,6 @@ class MenuTableSeeder extends Seeder
                 'icon' => 'fas fa-star',
                 'to'   => 'evaluation'
             ]
-        );
+        ]);
     }
 }
