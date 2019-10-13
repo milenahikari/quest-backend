@@ -11,27 +11,34 @@ class MenuTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('menus')->insert([
+        DB::table('explanations')->insert([
             [
-                'name' => 'Meu perfil',
-                'icon' => 'fas fa-user-edit',
-                'to'   => 'profile'
+                'title'    => 'APRENDA',
+                'image'    => 'grupoestudo.png',
+                'position' => '0px -15px',
+                'textI'    => 'Encontre a ajuda perfeita para entender a matéria',
+                'textII'   => 'Tire suas dúvidas com um amigo',
+                'textIII'  => 'Combine o melhor momento para estudar',
+                'textIV'   => '',
             ],
             [
-                'name' => 'Minhas matérias',
-                'icon' => 'fas fa-chalkboard-teacher',
-                'to'   => 'my-courses'
+                'title'    => 'ENSINE',
+                'image'    => 'ensinar.png',
+                'position' => '0px -55px',
+                'textI'    => 'Compartilhe seu conhecimento',
+                'textII'   => 'Faça novas amizades',
+                'textIII'  => 'Divirta-se ensinando e aprendendo',
+                'textIV'   => '',
             ],
             [
-                'name' => 'Medalhas',
-                'icon' => 'fas fa-medal',
-                'to'   => 'medals'
+                'title'    => 'CONQUISTE',
+                'image'    => 'premio.jpg',
+                'position' => '0px -20px',
+                'textI'    => 'Colabore ensinando e ganhe estrelas',
+                'textII'   => 'Cumpra metas e colecione pedras preciosas',
+                'textIII'  => 'Seja um membro',
+                'textIV'   => 'É grátis :)',
             ],
-            [
-                'name' => 'Avaliar Aula',
-                'icon' => 'fas fa-star',
-                'to'   => 'evaluation'
-            ]
         ]);
     }
 }
