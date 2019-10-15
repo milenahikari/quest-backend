@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use App\Http\Controllers\MonitorController;
 
 class UserController extends Controller
 {
@@ -31,8 +32,16 @@ class UserController extends Controller
                 'course' => $user->course,
                 'email' => $user->email,
                 'id_city' => $user->id_city,
-                'teach' => $user->teach
+                'teach' => $user->teach,
+                'phone' => '',
+                'share' => ''
             ];
+
+            if ($user->teach) {
+                $contactMonitor = MonitorController::searchPhone($user->id);
+                $success['profile']['phone'] = $contactMonitor[0]->phone;
+                $success['profile']['share'] = $contactMonitor[0]->share;
+            }
 
             return response()->json(['success' => $success], $this->successStatus);
         } else {

@@ -87,4 +87,9 @@ class MonitorController extends Controller
     {
         return Monitor::find($idCategory);
     }
+
+    public static function searchPhone($idUser)
+    {
+        return Monitor::getPhone($idUser);
+    }
 }

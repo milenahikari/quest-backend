@@ -33,4 +33,13 @@ class Monitor extends Model
             return $monitors;
         }
     }
+
+    public static function getPhone($idUser)
+    {
+        $contact = Monitor::select('monitors.phone as phone', 'monitors.share_phone as share')
+            ->join('users', 'users.id', '=', 'monitors.id_user')
+            ->where('users.id', '=', $idUser)
+            ->get();
+        return $contact;
+    }
 }
