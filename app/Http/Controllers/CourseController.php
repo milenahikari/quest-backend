@@ -62,6 +62,8 @@ class CourseController extends Controller
             ->orderBy('categories.id')
             ->get();
 
+        return $dados;
+
         if (count($dados) > 0) {
             $category = [];
             $idCategory = 0;
