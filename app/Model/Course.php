@@ -10,7 +10,7 @@ class Course extends Model
 
     public static function serch($idCity, $course)
     {
-        $course = Course::select(
+        $courses = Course::select(
             'monitors.id',
             'users.name as name_monitor',
             'users.course as course',
@@ -27,6 +27,6 @@ class Course extends Model
             ->where('cities.id', '=', $idCity)
             ->where('courses.title', 'like', "%{$course}%")
             ->get();
-        return $course;
+        return $courses;
     }
 }

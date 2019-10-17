@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Course;
 use Validator;
+use App\Http\Controllers\RatingsController;
 
 class CourseController extends Controller
 {
@@ -26,6 +27,8 @@ class CourseController extends Controller
         }
         $data = $request->all();
 
+        $data['title'] = strtoupper($data['title']);
+
         $course = Course::create($data);
 
         return response()->json(['success' => 'Curso cadastrado com sucesso'], $this->successStatus);
@@ -33,7 +36,13 @@ class CourseController extends Controller
 
     public function find(Request $request)
     {
-        return Course::serch($request->get('idCity'), $request->get('course'));
+        $courses =  Course::serch($request->get('idCity'), $request->get('course'));
+
+        foreach ($courses as $key => $value) {
+            $rating = RatingsController::getRating($value->id);
+            $value->rating = $rating;
+        }
+        return $courses;
     }
 
     public function getCourses($idMonitor)
@@ -83,7 +92,6 @@ class CourseController extends Controller
                 $idCategory = $value['id'];
                 $index = $key;
             }
-
 
             return $category;
         }

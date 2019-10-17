@@ -16,4 +16,9 @@ class RatingsController extends Controller
             return response()->json(['error' => 'Unauthorised'], 500);
         }
     }
+
+    public static function getRating($idMonitor)
+    {
+        return Rating::get($idMonitor);
+    }
 }

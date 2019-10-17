@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Monitor;
 use App\Model\Course;
 use Validator;
+use App\Http\Controllers\RatingsController;
 
 class MonitorController extends Controller
 {
@@ -85,7 +86,14 @@ class MonitorController extends Controller
 
     public function getMonitorsByCategory($idCategory)
     {
-        return Monitor::find($idCategory);
+        $monitors = Monitor::find($idCategory);
+
+        foreach ($monitors as $key => $value) {
+            $rating = RatingsController::getRating($value->id);
+            $value->rating = $rating;
+        }
+
+        return $monitors;
     }
 
     public static function searchPhone($idUser)
