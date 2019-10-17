@@ -63,7 +63,6 @@ class MonitorController extends Controller
 
     public function monitorDetail($idMonitor)
     {
-        return gettype($idMonitor);
         // if (!is_numeric($idMonitor) || $idMonitor < 0) return;
 
         $monitor = Monitor::select(
