@@ -47,7 +47,7 @@ class CourseController extends Controller
 
     public function getCourses($idMonitor)
     {
-        // if (!is_numeric($idMonitor) || $idMonitor < 0) return;
+        if (!is_numeric($idMonitor) || $idMonitor < 0) return;
 
         $dados = Course::select(
             'categories.id',
@@ -61,8 +61,6 @@ class CourseController extends Controller
             ->where('courses.id_monitor', $idMonitor)
             ->orderBy('categories.id')
             ->get();
-
-        return $dados;
 
         if (count($dados) > 0) {
             $category = [];
