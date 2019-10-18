@@ -47,8 +47,6 @@ class CourseController extends Controller
 
     public function getCourses($idMonitor)
     {
-        if (!is_numeric($idMonitor) || $idMonitor < 0) return;
-
         $dados = Course::select(
             'categories.id',
             'categories.name',
