@@ -44,4 +44,13 @@ class Monitor extends Model
             ->get();
         return $contact;
     }
+
+    public static function getId($idUser)
+    {
+        $id = Monitor::select('monitors.id')
+            ->join('users', 'users.id', '=', 'monitors.id_user')
+            ->where('users.id', '=', $idUser)
+            ->first();
+        return $id;
+    }
 }

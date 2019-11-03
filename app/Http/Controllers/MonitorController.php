@@ -98,4 +98,9 @@ class MonitorController extends Controller
     {
         return Monitor::getPhone($idUser);
     }
+
+    public static function getIdMonitor($idUser)
+    {
+        return Monitor::getId($idUser);
+    }
 }

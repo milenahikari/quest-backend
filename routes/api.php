@@ -14,12 +14,17 @@ Route::group(['middleware' => 'auth:api'], function () {
   Route::post('course', 'CourseController@store');
 });
 
+Route::get('/gems', 'GemController@getGems');
+Route::get('/gems/colors', 'GemController@getColorsGems');
+Route::get('/monitors/gems/{idMonitor}', 'AchievementController@getGemsMonitor');
+
 Route::get('monitors/category/{idCategory}', 'MonitorController@getMonitorsByCategory');
 
 Route::get('/menus', 'MenuController@index');
 
 Route::get('/monitors', 'MonitorController@getMonitors');
 Route::get('/monitors/{idMonitor}', 'MonitorController@monitorDetail');
+Route::get('/monitors/qrcode/{idUser}', 'MonitorController@getIdMonitor');
 
 Route::get('/monitors/courses/{idMonitor}', 'CourseController@getCourses');
 Route::post('/monitors/email', 'SendMailMonitorController@send');
