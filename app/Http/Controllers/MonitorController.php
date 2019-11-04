@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Model\Monitor;
 use App\Model\Course;
 use Validator;
@@ -30,13 +31,25 @@ class MonitorController extends Controller
             return response()->json(['error' => $validator->errors()], 401);
         }
 
-        $user = $request->all();
+        $dataMonitor = $request->all();
 
         //Salva dados no banco
-        $monitor = Monitor::create($user);
+        $monitor = Monitor::create($dataMonitor);
+
+        $user = User::getUser($dataMonitor['id_user']);
 
         //Retorno id monitor
-        $success['id_monitor'] =  $monitor->id;
+        $success['profile'] = [
+            'id' => $user[0]->id,
+            'name' => $user[0]->name,
+            'course' => $user[0]->course,
+            'email' => $user[0]->email,
+            'id_city' => $user[0]->id_city,
+            'teach' => $user[0]->teach,
+            'phone' => $monitor->phone,
+            'share' => $monitor->share_phone,
+            'id_monitor' => $monitor->id
+        ];
 
         return response()->json(['success' => $success], $this->successStatus);
     }
@@ -94,13 +107,13 @@ class MonitorController extends Controller
         return $monitors;
     }
 
-    public static function searchPhone($idUser)
+    public static function dataMonitor($idUser)
     {
-        return Monitor::getPhone($idUser);
+        return Monitor::getMonitor($idUser);
     }
 
-    public static function getIdMonitor($idUser)
-    {
-        return Monitor::getId($idUser);
-    }
+    // public static function getIdMonitor($idUser)
+    // {
+    //     return Monitor::getId($idUser);
+    // }
 }

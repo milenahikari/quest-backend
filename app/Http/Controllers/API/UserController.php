@@ -34,13 +34,15 @@ class UserController extends Controller
                 'id_city' => $user->id_city,
                 'teach' => $user->teach,
                 'phone' => '',
-                'share' => ''
+                'share' => '',
+                'id_monitor' => ''
             ];
 
             if ($user->teach) {
-                $contactMonitor = MonitorController::searchPhone($user->id);
-                $success['profile']['phone'] = $contactMonitor[0]->phone;
-                $success['profile']['share'] = $contactMonitor[0]->share;
+                $dadosMonitor = MonitorController::dataMonitor($user->id);
+                $success['profile']['phone'] = $dadosMonitor[0]->phone;
+                $success['profile']['share'] = $dadosMonitor[0]->share;
+                $success['profile']['id_monitor'] = $dadosMonitor[0]->id_monitor;
             }
 
             return response()->json(['success' => $success], $this->successStatus);
@@ -95,5 +97,10 @@ class UserController extends Controller
     {
         $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
+    }
+
+    public function getUser($idUser)
+    {
+        return User::getUserEdit($idUser);
     }
 }

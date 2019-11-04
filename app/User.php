@@ -39,7 +39,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function city() {
+    public function city()
+    {
         return $this->belongsTo(City::class);
+    }
+
+    public static function get()
+    {
+        return User::all();
+    }
+
+    public static function getUser($id)
+    {
+        return User::where('users.id', '=', $id)
+            ->get();
+    }
+
+    public static function getUserEdit($id)
+    {
+        return User::where('users.id', '=', $id)
+            ->get();
     }
 }

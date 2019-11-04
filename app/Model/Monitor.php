@@ -36,21 +36,21 @@ class Monitor extends Model
         }
     }
 
-    public static function getPhone($idUser)
+    public static function getMonitor($idUser)
     {
-        $contact = Monitor::select('monitors.phone as phone', 'monitors.share_phone as share')
+        $data = Monitor::select('monitors.phone as phone', 'monitors.share_phone as share', 'monitors.id as id_monitor')
             ->join('users', 'users.id', '=', 'monitors.id_user')
             ->where('users.id', '=', $idUser)
             ->get();
-        return $contact;
+        return $data;
     }
 
-    public static function getId($idUser)
-    {
-        $id = Monitor::select('monitors.id')
-            ->join('users', 'users.id', '=', 'monitors.id_user')
-            ->where('users.id', '=', $idUser)
-            ->first();
-        return $id;
-    }
+    // public static function getId($idUser)
+    // {
+    //     $id = Monitor::select('monitors.id')
+    //         ->join('users', 'users.id', '=', 'monitors.id_user')
+    //         ->where('users.id', '=', $idUser)
+    //         ->first();
+    //     return $id;
+    // }
 }
