@@ -73,9 +73,7 @@ class UserController extends Controller
 
         $input = $request->all();
 
-        $url = UploadImage::send('quest', $input['photo']);
-
-        return $url;
+        $input['photo'] = UploadImage::send('quest', $input['photo']);
 
         $input['password'] = bcrypt($input['password']);
 
@@ -89,7 +87,8 @@ class UserController extends Controller
             'name' => $user->name,
             'course' => $user->course,
             'email' => $user->email,
-            'id_city' => $user->id_city
+            'id_city' => $user->id_city,
+            'photo' => $user->photo
         ];
         return response()->json(['success' => $success], $this->successStatus);
     }
