@@ -103,4 +103,35 @@ class UserController extends Controller
     {
         return User::getUserEdit($idUser);
     }
+
+    public function getUserContact($idUser)
+    {
+        return User::getUserContact($idUser);
+    }
+
+    public function validateEmail($email)
+    {
+        return User::getEmail($email);
+    }
+
+    public function updateDados($idUser, Request $dados)
+    {
+        $user = User::updateDados($idUser, $dados);
+
+        return $user;
+    }
+
+    public function updateContact($idUser, Request $dados)
+    {
+        $user = User::updateCity($idUser, $dados);
+        //se o usuário ensina, atualiza o telefone tmb      
+        if ($dados[0] == 1 || $dados[0] == true) {
+            User::updatePhone($dados);
+        }
+    }
+
+    public function updatePassword($idUser, Request $dados)
+    {
+        return User::updatePassword($idUser, $dados);
+    }
 }

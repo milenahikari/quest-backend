@@ -35,7 +35,13 @@ Route::get('/search_city', 'CityController@searchCity');
 
 // Route::put('/user/{id}', 'UserController@update');
 Route::get('/user/{id}', 'API\UserController@getUser');
+Route::get('/user/email/{email}', 'API\UserController@validateEmail');
 
 Route::get('/search/course', 'CourseController@find');
 
 Route::post('/ratings/monitor', 'RatingsController@evaluation');
+
+Route::put('/user/{id}', 'API\UserController@updateDados');
+Route::get('/userContact/{id}', 'API\UserController@getUserContact');
+Route::put('/userContact/{id}', 'API\UserController@updateContact');
+Route::put('/userPassword/{id}', 'API\UserController@updatePassword');

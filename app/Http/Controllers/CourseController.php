@@ -27,7 +27,7 @@ class CourseController extends Controller
         }
         $data = $request->all();
 
-        $data['title'] = strtoupper($data['title']);
+        $data['title'] = mb_strtoupper($data['title'], 'UTF-8');
 
         $course = Course::create($data);
 

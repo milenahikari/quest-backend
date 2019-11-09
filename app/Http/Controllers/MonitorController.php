@@ -66,7 +66,6 @@ class MonitorController extends Controller
             ->join('users', 'users.id', '=', 'monitors.id_user')
             ->join('cities', 'cities.id', '=', 'users.id_city')
             ->join('states', 'states.id', '=', 'cities.id_state')
-            ->limit(5)
             ->get();
 
         if (count($monitors) > 0) {

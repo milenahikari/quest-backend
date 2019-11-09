@@ -6,6 +6,8 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hash;
+use App\Model\Monitor;
 
 class User extends Authenticatable
 {
@@ -55,9 +57,82 @@ class User extends Authenticatable
             ->get();
     }
 
-    public static function getUserEdit($id)
+    public static function getUserEdit($idUser)
     {
-        return User::where('users.id', '=', $id)
+        return User::select(
+            'users.name as name',
+            'users.email as email',
+            'users.course as course',
+            'users.id_city as id_city',
+            'cities.name as city',
+            'states.federated_unit as state'
+        )
+            ->join('cities', 'users.id_city', '=', 'cities.id')
+            ->join('states', 'cities.id_state', '=', 'states.id')
+            ->where('users.id', $idUser)
             ->get();
+    }
+
+    public static function getUserContact($idUser)
+    {
+        return Monitor::select(
+            'monitors.phone',
+            'monitors.share_phone as share'
+        )
+            ->where('monitors.id_user', $idUser)
+            ->get();
+    }
+
+    public static function getEmail($email)
+    {
+        $userEmail = User::where('users.email', '=', $email)
+            ->get();
+
+        $haveEmail = count($userEmail);
+        return response()->json(['registered' => $haveEmail], 200);
+    }
+
+    public static function updateDados($idUser, $dados)
+    {
+        $data = User::findOrFail($idUser);
+        $data->name = $dados[0];
+        $data->course = $dados[1];
+        $data->save();
+
+        return $data;
+    }
+
+    public static function updateCity($idUser, $dados)
+    {
+        $data = User::findOrFail($idUser);
+        $data->id_city = $dados[1];
+        $data->save();
+
+        return $data;
+    }
+
+    public static function updatePassword($idUser, $dados)
+    {
+        $data = User::findOrFail($idUser);
+        if (Hash::check($dados[0], $data->password)) {
+            if ($dados[1] == $dados[2]) {
+                $data->password = bcrypt($dados[1]);
+                $data->save();
+
+                return 'Senha salva';
+            }
+        }
+
+        return 'Senha antiga incorreta';
+    }
+
+    public static function updatePhone($dados)
+    {
+        $data = Monitor::findOrFail($dados[2]);
+        $data->phone = $dados[3];
+        $data->share_phone = $dados[4];
+        $data->save();
+
+        return $data;
     }
 }
