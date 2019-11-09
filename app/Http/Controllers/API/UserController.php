@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\MonitorController;
+use App\Model\UploadImage;
 
 class UserController extends Controller
 {
@@ -71,6 +72,11 @@ class UserController extends Controller
         }
 
         $input = $request->all();
+
+        UploadImage::send('quest', $input['photo']);
+
+        return;
+
         $input['password'] = bcrypt($input['password']);
 
         //Salva dados no banco
