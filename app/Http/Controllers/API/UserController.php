@@ -73,7 +73,7 @@ class UserController extends Controller
 
         $input = $request->all();
 
-        $input['photo'] = UploadImage::send('quest', $input['photo']);
+        if (!empty($input['photo'])) $input['photo'] = UploadImage::send('quest', $input['photo']);
 
         $input['password'] = bcrypt($input['password']);
 
