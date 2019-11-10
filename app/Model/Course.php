@@ -37,7 +37,7 @@ class Course extends Model
         return 'Curso removido';
     }
 
-    public function getCourse($idCourse)
+    public static function getCourse($idCourse)
     {
         $dados = Course::select(
             'categories.id',
