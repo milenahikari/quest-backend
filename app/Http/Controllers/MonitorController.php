@@ -99,6 +99,8 @@ class MonitorController extends Controller
     {
         $monitors = Monitor::find($idCategory);
 
+        if (empty($monitors)) return 0;
+
         foreach ($monitors as $key => $value) {
             $rating = RatingsController::getRating($value->id);
             $value->rating = $rating;
