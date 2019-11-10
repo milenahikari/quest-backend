@@ -63,6 +63,7 @@ class User extends Authenticatable
             'users.name as name',
             'users.email as email',
             'users.course as course',
+            'users.photo as photo',
             'users.id_city as id_city',
             'cities.name as city',
             'states.federated_unit as state'
@@ -118,12 +119,13 @@ class User extends Authenticatable
             if ($dados[1] == $dados[2]) {
                 $data->password = bcrypt($dados[1]);
                 $data->save();
-
-                return 'Senha salva';
+                return response()->json(['success'], 200);
+            } else {
+                return response()->json(['error' => 'Unauthorised'], 401);
             }
+        } else {
+            return response()->json(['error' => 'Unauthorised'], 401);
         }
-
-        return 'Senha antiga incorreta';
     }
 
     public static function updatePhone($dados)

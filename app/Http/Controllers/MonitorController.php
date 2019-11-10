@@ -80,6 +80,7 @@ class MonitorController extends Controller
             'users.name as name',
             'users.course',
             'users.email',
+            'users.photo',
             'cities.name as city',
             'states.federated_unit as state'
         )

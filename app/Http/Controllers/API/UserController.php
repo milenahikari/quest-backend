@@ -32,6 +32,7 @@ class UserController extends Controller
                 'name' => $user->name,
                 'course' => $user->course,
                 'email' => $user->email,
+                'photo' => $user->photo,
                 'id_city' => $user->id_city,
                 'teach' => $user->teach,
                 'phone' => '',
@@ -73,7 +74,7 @@ class UserController extends Controller
 
         $input = $request->all();
 
-        if (!empty($input['photo'])) $input['photo'] = UploadImage::send('quest', $input['photo']);
+        $input['photo'] = (!empty($input['photo'])) ?  UploadImage::send('quest', $input['photo']) : null;
 
         $input['password'] = bcrypt($input['password']);
 

@@ -29,4 +29,37 @@ class Course extends Model
             ->get();
         return $courses;
     }
+
+    public static function destroy($idCourse)
+    {
+        $course = Course::find($idCourse);
+        $course->delete();
+        return 'Curso removido';
+    }
+
+    public function getCourse($idCourse)
+    {
+        $dados = Course::select(
+            'categories.id',
+            'categories.name',
+            'categories.icon',
+            'courses.title',
+            'courses.description'
+        )
+            ->join('categories', 'courses.id_category', '=', 'categories.id')
+            ->where('courses.id', $idCourse)
+            ->get();
+        return $dados;
+    }
+
+
+    public static function updateCourse($idCourse, $dados)
+    {
+        $data = Course::findOrFail($idCourse);
+        $data->title = mb_strtoupper($dados[0], 'UTF-8');
+        $data->description = $dados[1];
+        $data->save();
+
+        return response()->json($data, 200);
+    }
 }

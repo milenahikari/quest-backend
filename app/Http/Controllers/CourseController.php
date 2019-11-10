@@ -94,4 +94,19 @@ class CourseController extends Controller
             return $category;
         }
     }
+
+    public function deleteCourse($idCourse)
+    {
+        return Course::destroy($idCourse);
+    }
+
+    public function getCourse($idCourse)
+    {
+        return Course::getCourse($idCourse);
+    }
+
+    public function updateCourse($idCourse, Request $dados)
+    {
+        return Course::updateCourse($idCourse, $dados);
+    }
 }

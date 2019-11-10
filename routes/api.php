@@ -45,3 +45,7 @@ Route::put('/user/{id}', 'API\UserController@updateDados');
 Route::get('/userContact/{id}', 'API\UserController@getUserContact');
 Route::put('/userContact/{id}', 'API\UserController@updateContact');
 Route::put('/userPassword/{id}', 'API\UserController@updatePassword');
+
+Route::post('/course/{id}', 'CourseController@deleteCourse');
+Route::put('/course/{id}', 'CourseController@updateCourse');
+Route::get('/monitors/courses/{idCourse}', 'CourseController@getCourse');
