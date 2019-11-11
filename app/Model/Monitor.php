@@ -48,10 +48,27 @@ class Monitor extends Model
 
     public static function newMonitor($monitor)
     {
-        $data = $monitor->all();
 
+        User::updateTeach($monitor->id_user);
+
+        $data = $monitor->all();
         $retorno = Monitor::create($data);
 
-        return response()->json(['success' => $retorno], 200);
+        $user = User::getUserEdit($monitor->id_user);
+
+        $success = [
+            'id' => $user[0]->id,
+            'name' => $user[0]->name,
+            'course' => $user[0]->course,
+            'email' => $user[0]->email,
+            'photo' => $user[0]->photo,
+            'id_city' => $user[0]->id_city,
+            'teach' => $user[0]->teach,
+            'phone' => $retorno->phone,
+            'share' => $retorno->share_phone,
+            'id_monitor' => $retorno->id
+        ];
+
+        return response()->json([$success], 200);
     }
 }

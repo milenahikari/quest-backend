@@ -137,4 +137,11 @@ class User extends Authenticatable
 
         return $data;
     }
+
+    public static function updateTeach($idUser)
+    {
+        $data = User::findOrFail($idUser);
+        $data->teach = true;
+        $data->save();
+    }
 }
