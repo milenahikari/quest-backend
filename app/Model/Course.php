@@ -15,6 +15,7 @@ class Course extends Model
             'users.name as name_monitor',
             'users.course as course',
             'users.email as email',
+            'users.photo as photo',
             'cities.name as city',
             'states.federated_unit as state',
             'monitors.phone',

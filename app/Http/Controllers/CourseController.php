@@ -36,7 +36,7 @@ class CourseController extends Controller
 
     public function find(Request $request)
     {
-        $courses =  Course::serch($request->get('idCity'), $request->get('course'));
+        $courses =  Course::serch($request->get('idCity'), mb_strtoupper($request->get('course'), 'UTF-8'));
 
         foreach ($courses as $key => $value) {
             $rating = RatingsController::getRating($value->id);
