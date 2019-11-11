@@ -46,12 +46,12 @@ class Monitor extends Model
         return $data;
     }
 
-    // public static function getId($idUser)
-    // {
-    //     $id = Monitor::select('monitors.id')
-    //         ->join('users', 'users.id', '=', 'monitors.id_user')
-    //         ->where('users.id', '=', $idUser)
-    //         ->first();
-    //     return $id;
-    // }
+    public static function newMonitor($monitor)
+    {
+        $data = $monitor->all();
+
+        $retorno = Monitor::create($data);
+
+        return response()->json(['success' => $retorno], 200);
+    }
 }

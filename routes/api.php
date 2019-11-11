@@ -11,7 +11,6 @@ Route::post('register', 'API\UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function () {
   Route::post('register/monitor', 'MonitorController@registerMonitor');
-  Route::post('course', 'CourseController@store');
 });
 
 Route::get('/gems', 'GemController@getGems');
@@ -24,6 +23,7 @@ Route::get('/menus', 'MenuController@index');
 
 Route::get('/monitors', 'MonitorController@getMonitors');
 Route::get('/monitors/{idMonitor}', 'MonitorController@monitorDetail');
+Route::post('/monitor/new', 'MonitorController@newMonitor');
 // Route::get('/monitors/qrcode/{idUser}', 'MonitorController@getIdMonitor');
 
 Route::get('/monitors/courses/{idMonitor}', 'CourseController@getCourses');
@@ -46,6 +46,7 @@ Route::get('/userContact/{id}', 'API\UserController@getUserContact');
 Route::put('/userContact/{id}', 'API\UserController@updateContact');
 Route::put('/userPassword/{id}', 'API\UserController@updatePassword');
 
+Route::post('course', 'CourseController@store');
 Route::post('/course/{id}', 'CourseController@deleteCourse');
 Route::put('/course/{id}', 'CourseController@updateCourse');
 Route::get('/monitors/course/{idCourse}', 'CourseController@getCourse');

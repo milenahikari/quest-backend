@@ -114,8 +114,8 @@ class MonitorController extends Controller
         return Monitor::getMonitor($idUser);
     }
 
-    // public static function getIdMonitor($idUser)
-    // {
-    //     return Monitor::getId($idUser);
-    // }
+    public static function newMonitor(Request $monitor)
+    {
+        return Monitor::newMonitor($monitor);
+    }
 }

@@ -4,6 +4,7 @@ insert into menus (name, icon, `to`, created_at, updated_at) values ("Minhas mat
 insert into menus (name, icon, `to`, created_at, updated_at) values ("Medalhas", "fas fa-medal", "medals", CURRENT_TIMESTAMP, null);
 --insert into menus (name, icon, `to`, created_at, updated_at) values ("QR Code", "fas fa-qrcode", "/", CURRENT_TIMESTAMP, null);
 insert into menus (name, icon, `to`, created_at, updated_at) values ("Avaliar aula", "fas fa-star", "evaluation", CURRENT_TIMESTAMP, null);
+insert into menus (name, icon, `to`, created_at, updated_at) values ("Criar matéria", "fas fa-book-open", "add-contact", CURRENT_TIMESTAMP, null);
 -- insert into menus (name, icon, `to`, created_at, updated_at) values ("Sair", "fas fa-sign-out-alt", "/", CURRENT_TIMESTAMP, null);
 
 /*EXPLANATIONS*/
