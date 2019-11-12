@@ -61,7 +61,7 @@ class Monitor extends Model
         $user = User::getUserEdit($monitor->id_user);
 
         $success = [
-            'id' => $user[0]->id,
+            'id' => $retorno->id,
             'name' => $user[0]->name,
             'course' => $user[0]->course,
             'email' => $user[0]->email,
@@ -70,7 +70,7 @@ class Monitor extends Model
             'teach' => $user[0]->teach,
             'phone' => $retorno->phone,
             'share' => $retorno->share_phone,
-            'id_monitor' => $retorno->id
+            'id_monitor' => $user[0]->id
         ];
 
         return response()->json([$success], 200);
