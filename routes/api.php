@@ -16,7 +16,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 Route::get('/gems', 'GemController@getGems');
 Route::get('/gems/colors', 'GemController@getColorsGems');
 Route::get('/monitors/gems/{idMonitor}', 'AchievementController@getGemsMonitor');
-Route::get('/monitors/listagem', 'AchievementController@getMonitorsByGems');
+Route::get('/monitors/listagem', 'MonitorController@getMonitorsByGems');
 
 Route::get('monitors/category/{idCategory}', 'MonitorController@getMonitorsByCategory');
 

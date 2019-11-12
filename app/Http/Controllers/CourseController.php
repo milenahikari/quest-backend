@@ -42,6 +42,8 @@ class CourseController extends Controller
             $rating = RatingsController::getRating($value->id);
             $value->rating = $rating;
         }
+
+        if (count($courses) <= 0) $courses = 'vazio';
         return $courses;
     }
 

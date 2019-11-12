@@ -16,7 +16,7 @@ class City extends Model
             ->where('cities.name', 'LIKE', "{$name}%")
             ->where('cities.id', '>', 0)
             ->orderBy('cities.name')
-            ->limit(10)
+            ->limit(3)
             ->get();
 
         return $cities;

@@ -3,7 +3,10 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Model\Achievement;
+use App\Model\Rating;
 
 class Monitor extends Model
 {
@@ -71,5 +74,35 @@ class Monitor extends Model
         ];
 
         return response()->json([$success], 200);
+    }
+
+    public static function getMonitorsGems()
+    {
+        $monitors = DB::table('achievements')
+            ->join('monitors', 'achievements.id_monitor', '=', 'monitors.id')
+            ->join('users', 'monitors.id_user', '=', 'users.id')
+            ->join('cities', 'users.id_city', '=', 'cities.id')
+            ->join('states', 'cities.id_state', '=', 'states.id')
+            ->groupBy('achievements.id_monitor')
+            ->orderBy(DB::raw('MAX(achievements.id_gem)'), 'desc')
+            ->get([
+                'achievements.id_monitor',
+                'monitors.id',
+                'users.name as name_monitor',
+                'users.course as course',
+                'users.email as email',
+                'users.photo as photo',
+                'cities.name as city',
+                'states.federated_unit as state',
+                'monitors.phone',
+                'users.photo', DB::raw('MAX(achievements.id_gem) as total_gems')
+            ]);
+
+        foreach ($monitors as $key => $value) {
+            $rating = Rating::get($value->id);
+            $value->rating = $rating;
+        }
+
+        return $monitors;
     }
 }

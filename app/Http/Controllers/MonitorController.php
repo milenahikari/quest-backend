@@ -99,7 +99,7 @@ class MonitorController extends Controller
     {
         $monitors = Monitor::find($idCategory);
 
-        if (empty($monitors)) return 0;
+        if (empty($monitors)) return 'vazio';
 
         foreach ($monitors as $key => $value) {
             $rating = RatingsController::getRating($value->id);
@@ -117,5 +117,10 @@ class MonitorController extends Controller
     public static function newMonitor(Request $monitor)
     {
         return Monitor::newMonitor($monitor);
+    }
+
+    public static function getMonitorsByGems()
+    {
+        return Monitor::getMonitorsGems();
     }
 }
