@@ -1,72 +1,29 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<h1 align="center">QUEST - Backend</h1>
+<span align="center"> Rede Educacional para encontrar e compartilhar conhecimentos</span>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<h2>Informações gerais</h2>
+<p>Trabalho de Conclusão de Curso apresentado para obtenção do título de bacharel em Ciência da Computação das alunas Layane Oliveira e Milena Uemura 💃💃</p>
 
-## About Laravel
+<h2>Apresentação do projeto</h2>
+<h3>Objetivo</h3>
+<p>O objetivo principal do trabalho é facilitar a comunicação entre os alunos interessados em aprimorar os estudos, por meio do desenvolvimento de uma aplicação, na qual os usuários podem compartilhar e receber aprendizado, além de trocas de experiências.</p>
+<p>Desse modo, o estudante desenvolve habilidades de comunicação e expressão e define o melhor momento em relação ao tempo e espaço para reforçar os estudos</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h3>Tecnologias</h3>
+<ul>
+  <li>VueJS</li>
+  <li>Laravel</li>
+  <li>NodeJS</li>
+  <li>PostgreSQL</li>
+</ul>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h3>Resultado final</h3>
+<p>Colocando em prática os recursos tecnológicos estudados, foi possível atingir os objetivos esperados por meio de um aplicativo intuitivo, com a finalidade de auxiliar os estudantes a encontrarem apoio, melhorar suas habilidades e reforçar seus estudos, permitindo ultrapassar os limites dos espaços físico e criar uma rede educacional.</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<h3>Fluxo principal da aplicação</h3>
+<p>É possível ter acesso a lista de monitores cadastrados na plataforma, listados por localização, categoria ou filtro de busca escolhido pelo usuário. Após selecionado um monitor, podemos realizar o contato via e-mail ou WhatsApp para mais informações. O contato só será possível após o cadastro e login da aplicação.</p>
+<img src="https://user-images.githubusercontent.com/45109055/80924014-288c9c00-8d5d-11ea-8ccc-85851304b4f1.png" alt="Fluxo principal da aplicação"/>
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h3>Gameficação</h3>
+<p>Buscando estimular a contribuição dos monitores com conteúdos de qualidade, foi implementada uma estratégia interativa de gameficação, na qual o monitor poderá ser avalidado ao final de 0 a 5 estrelas. Conforme, o monitor acumula pontos positivos, será premiado com medalhas 🥇</p>
+<img src="https://user-images.githubusercontent.com/45109055/80924353-cfbe0300-8d5e-11ea-93ce-efe68add4912.png" alt="Gameficação da plataforma"/>
